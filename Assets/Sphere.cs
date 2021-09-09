@@ -9,7 +9,10 @@ public class Sphere : MonoBehaviour
     [SerializeField] public SphereSO sphereSO;
 
 
-
+    private void OnEnable()
+    {
+        ApplyModification();
+    }
     public void ApplyModification()
     {
         Vector3 v = new Vector3();
@@ -25,6 +28,6 @@ public class Sphere : MonoBehaviour
     {
         GameObject go = PrefabUtility.InstantiatePrefab(sphereSO.gameObject) as GameObject;
         go.AddComponent<Sphere>().sphereSO = sphereSO;
-
+        EditorUtility.SetDirty(go); // making sure the new instantiated prefabs from editor aren't lost
     }
 }
