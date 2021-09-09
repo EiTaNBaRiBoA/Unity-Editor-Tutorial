@@ -15,6 +15,6 @@ MonoBehaviour:
   x: 0.13
   y: 0.35
   z: 0
-  color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
   gameObject: {fileID: 2941665155658699756, guid: d87dad0c91d07dc42bbbc9e68d88bbd6, type: 3}
   gameobjectName: sphere
