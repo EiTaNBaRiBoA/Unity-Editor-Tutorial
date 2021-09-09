@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 
 public class Sphere : MonoBehaviour
@@ -15,15 +16,14 @@ public class Sphere : MonoBehaviour
         v.x = sphereSO.x;
         v.y = sphereSO.y;
         v.z = sphereSO.z;
-        this.GetComponent<Renderer>().material.SetColor("_Color", sphereSO.color);
+        this.GetComponent<Renderer>().sharedMaterial.SetColor("_Color", sphereSO.color);
         gameObject.name = sphereSO.gameobjectName;
 
 
     }
-
     public void instantiateNewObject()
     {
-        GameObject go = Instantiate(sphereSO.gameObject, Vector3.zero, Quaternion.identity);
+        GameObject go = PrefabUtility.InstantiatePrefab(sphereSO.gameObject) as GameObject;
         go.AddComponent<Sphere>().sphereSO = sphereSO;
 
     }
